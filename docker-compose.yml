@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  bot:
+    build: .
+    container_name: pch_finder_bot
+    restart: unless-stopped
+    environment:
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - START_YEAR=${START_YEAR:-1998}
+      - END_YEAR=${END_YEAR:-2005}
+    volumes:
+      - ./src:/app:ro
+    working_dir: /app
+    command: ["python", "bot.py"]
