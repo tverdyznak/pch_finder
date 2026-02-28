@@ -24,7 +24,7 @@ python -m venv env
 source env/bin/activate
 
 # Ставим зависимости
-pip install -e requirements.txt
+pip install -r requirements.txt
 
 # Применяем переменные
 export TELEGRAM_TOKEN=X
